@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			background-color: #fff;
+		}	
+		svg {
+			display: block;
+			margin: 100px auto 0 auto;
+			border: solid 1px;
+		}
+		button {
+			display: block;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+
+<svg width="300" height="150">
+	<circle cx="150" cy="75" r="70"
+		stroke="black" stroke-width="1" fill="none" />
+	<line stroke="black" stroke-width="8" stroke-linecap="round"
+		transform="translate(150, 75) rotate(60, 0, 0)"
+		x1="0" y1="0" x2="0" y2="-60"
+	/>
+</svg>
+<button type="button">Start</button>
+
+<script>
+(function () {
+	
+var line_el = document.querySelector("line");
+var button_el = document.querySelector("button");
+button_el.onclick = function () {
+	window.setInterval(function() {
+		var svgTransformList = line_el.transform.baseVal;
+		var sec = (new Date()).getSeconds();
+		var degree = (sec / 60) * 360;
+		svgTransformList.getItem(1).setRotate(degree, 0, 0);
+	}, 1000);
+};
+
+}());
+</script>
+</body>
+</html>

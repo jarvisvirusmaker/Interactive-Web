@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			background-color: #fff;
+		}	
+		canvas {
+			display: block;
+			margin: 100px auto;
+			border: solid 1px;
+		}
+	</style>
+</head>
+<body>
+<canvas width="300" height="150"></canvas>
+
+<script>
+(function () {
+
+var canvas_el = document.querySelector("canvas");
+var ctx = canvas_el.getContext("2d");
+ctx.fillStyle = "gray";
+ctx.fillRect(50, 50, 200, 50);
+
+})();
+</script>
+</body>
+</html>

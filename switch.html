@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			background-color: #fff;
+		}
+
+		.switch {
+			display: block;
+			margin: 50px auto;
+			width: 80px;
+		}
+
+		.switch > .switch-check {
+		    display: none;
+		}
+
+		.switch > .switch-toggle {
+		    background-color: gray;
+		    width: 80px;
+		    height: 40px;
+		    /* (1) 丸くしよう */
+		    border-radius: 20px; 
+		    /* (4) じんわり変化 */
+		    -webkit-transition: all .4s linear 0; 
+		}
+
+		.switch > .switch-toggle:before {
+		    display: block;
+		    position: relative;
+		    top: 2px;
+		    left: 2px;
+		    background-color: white;
+		    width: 36px;
+		    height: 36px;
+		    content: '';
+		    /* (2) これも丸くしよう */
+		    border-radius: 18px; 
+		    /* (5) じんわり変化 */
+		    -webkit-transition: all .4s linear 0; 
+		}
+
+		.switch-check:checked + .switch-toggle {
+		    background-color: limegreen;
+		}
+
+		.switch-check:checked + .switch-toggle:before {
+		    /* (3) 動かす */
+		    -webkit-transform: translate(40px, 0); 
+		}
+
+	</style>
+</head>
+<body>
+
+<label class="switch">
+  <input type="checkbox" class="switch-check">
+  <div class="switch-toggle"></div>
+</label>
+
+</script>
+</body>
+</html>

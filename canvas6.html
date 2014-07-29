@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			background-color: #fff;
+		}	
+		canvas {
+			display: block;
+			margin: 100px auto;
+			border: solid 1px;
+		}
+	</style>
+</head>
+<body>
+<canvas width="300" height="150"></canvas>
+
+<script>
+(function () {
+
+var canvas_el = document.querySelector("canvas");
+var ctx = canvas_el.getContext("2d");
+// 1秒間隔のタイマーをセット
+window.setInterval(function() {
+	// 座標空間変換をリセット
+	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	// Canvasをクリア
+	ctx.clearRect(0, 0, 300, 150);
+	// 円を描画
+	ctx.beginPath();
+	ctx.arc(150, 75, 70, 0, Math.PI*2, false);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+	// 座標空間の原点をCanvasの中心に移動
+	ctx.translate(150, 75);
+	// 座標空間を秒に合わせて回転
+	var sec = (new Date()).getSeconds();
+	ctx.rotate((sec / 60) * Math.PI * 2);
+	// 原点を中心に秒針を描画
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(0, -60);
+	ctx.lineWidth = 8;
+	ctx.lineCap = "round";
+	ctx.stroke();
+}, 1000);
+
+
+})();
+</script>
+</body>
+</html>

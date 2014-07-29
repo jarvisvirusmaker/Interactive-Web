@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			background-color: #fff;
+		}	
+		canvas {
+			display: block;
+			margin: 100px auto;
+			border: solid 1px;
+		}
+	</style>
+</head>
+<body>
+<canvas width="300" height="150"></canvas>
+
+<script>
+(function () {
+
+var canvas_el = document.querySelector("canvas");
+var ctx = canvas_el.getContext("2d");
+// 背景を黒で塗りつぶす
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, 300, 150);
+// 円形グラデーションを定義
+// ctx.createRadialGradient(x0, y0, r0, x1, y1, r1)
+// (x0, y0) を中心とする半径 r0 の円弧から
+// (x1, y1) を中心とする半径 r1 の円弧に向かって色が遷移する
+var grad = ctx.createRadialGradient(120, 35, 0, 120, 45, 110);
+grad.addColorStop(0.0, "#ffffff");
+grad.addColorStop(0.5, "#bc8c00");
+grad.addColorStop(1.0, "#96420a");
+ctx.fillStyle = grad;
+// 円のパスを定義
+ctx.beginPath();
+ctx.arc(150, 75, 70, 0, Math.PI*2, false);
+// 円を描画
+ctx.fill();
+
+})();
+</script>
+
+</body>
+</html>

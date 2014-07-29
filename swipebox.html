@@ -1,0 +1,54 @@
+<html>
+<head>
+	<link rel="stylesheet" href="assets/lib/swipebox/demo/normalize.css">
+	<link rel="stylesheet" href="assets/lib/swipebox/demo/bagpakk.min.css">
+	<link rel="stylesheet" href="assets/lib/swipebox/demo/style.css">
+	<link rel="stylesheet" href="assets/lib/swipebox/src/css/swipebox.css">
+	<style type="text/css" media="screen">
+		body {
+			border-top: none;
+		}
+		.container {
+			padding-top: 10px;
+		}
+	</style>
+</head>
+<body>
+<section id="exemple" class="container">
+	<div class="wrap small-width">
+		<div id="try"></div>
+		<ul id="box-container">
+			<li class="box">
+				<a href="assets/img/image-1.jpg" class="swipebox" title="Fog">
+					<img src="assets/img/image-1.jpg" alt="image">
+				</a>
+			</li>
+			<li class="box">
+				<a href="assets/img/image-2.jpg" class="swipebox" title="City">
+					<img src="assets/img/image-2.jpg" alt="image">
+				</a>
+			</li>
+			<li class="box">
+				<a href="assets/img/image-3.jpg" class="swipebox" title="Street">
+					<img src="assets/img/image-3.jpg" alt="image">
+				</a>
+			</li>
+			<li class="box">
+				<a href="assets/img/image-4.jpg" class="swipebox" title="Mustache Guy">
+					<img src="assets/img/image-4.jpg" alt="image">
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+<script src="assets/lib/jquery-2.1.0.min.js"></script>
+<script src="assets/lib/swipebox/src/js/jquery.swipebox.js"></script>
+<script type="text/javascript">
+(function ($) {
+
+	$('.swipebox').swipebox();
+
+})(jQuery);
+</script>
+</body>
+</html>

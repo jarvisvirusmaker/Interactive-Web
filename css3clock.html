@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			background-color: #fff;
+		}	
+		.board {
+			display: block;
+			margin: 100px auto 0 auto;
+			width: 300px;
+			height: 150px;
+			border: solid 1px;
+		}
+		.circle {
+			width: 140px;
+			height: 140px;
+			border: solid 1px;
+			position: relative;
+			top: 5px;
+			left: 80px;
+			border-radius: 70px;
+		}
+		.line {
+			height: 65px;
+			width: 8px;
+			background: black;
+			border-radius: 4px;
+			-webkit-transform: translate(66px, 5px);
+		}
+		button {
+			display: block;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+
+<div class="board">
+	<div class="circle">
+		<div class="line"></div>
+	</div>
+</div>
+
+<button type="button">Start</button>
+
+<script src="assets/lib/jquery-2.1.0.min.js"></script>
+<script>
+(function () {
+	
+var line = $('.line');
+$('button').one('click', function () {
+	var base = line.css('-webkit-transform');
+	line.css('-webkit-transform-origin', 'center bottom');
+	window.setInterval(function() {
+		var sec = (new Date()).getSeconds();
+		var degree = (sec / 60) * 360;
+		line.css('-webkit-transform', base + ' rotate(' + degree + 'deg)');
+	}, 1000);
+});
+
+}());
+</script>
+</body>
+</html>

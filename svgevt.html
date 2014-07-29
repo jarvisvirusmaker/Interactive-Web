@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf8">
+	<title></title>
+	<style>
+		body {
+			background-color: powderblue;
+		}	
+		svg {
+			display: block;			
+			margin: 0 auto 0 auto;
+		}
+		#hokkaido:hover {
+			fill: red;
+		}
+	</style>
+</head>
+<body>
+
+<svg width="800" height="400">
+	<rect x="0" y="0" width="800" height="400" fill="powderblue" />
+	<path
+       d="M591 250l-1 6h-3v-9l6 -2zM620 271l-1 -11 -4 -7 -5 -1 -2 -5 -4 -1 -2 -5 4 -8 -1 -11 2 -3 8 -2 6 -9 3 4 2 -1 4 -9 6 -5 -9 -13v-7l7 -3 14 11 10 -3v3l7 2 6 -2 5 -10 -5 -24 2 -5 8 -4 4 -5 -1 -23 4 -8 1 -11 -3 -17 -8 -19 3 -10 -1 -6 2 3h5l6 -8 26 28 8 13 16 17 29 18 28 6 1 4 6 5h19l22 -27 2 5 -11 24v9l4 6 9 3 -2 2 2 -3h-6l4 13 6 6 5 1 6 -8 8 -1 -11 8 -1 7 -17 3 -2 6 -5 5h-5l-2 -2 1 -2 -2 -1 -4 6 3 2 -15 1 -8 -3 -15 8 -14 16 -8 14 -3 8v16l-2 8 -14 -12 -23 -8 -28 -18 -13 -2 4 -2 -16 8 -15 15 -4 -2 4 -1 -5 -1 -2 -6 -8 -7h-10l-6 8 -3 9 1 5 12 8 10 -1 10 12 8 4 2 3 -6 5 -4 1 -9 -4 -3 3v-5h-3l-2 5 -7 4v9l-8 3 -3 6 -8 -3 -2 -7 1 -9zM659 58l2 -2 4 1 2 5 -4 4 -4 -4zM653 45v-1l2 2 -1 9 -4 -10zM957 29l-2 -5h-2l-2 4 2 7 -1 3 -5 1 -2 8 -7 -2 1 7 -10 10 -1 4 -5 -1v3l4 1v4l-4 4 -4 -1 1 5 -3 -4 1 5 -3 7 4 1 4 -9 6 -1 4 -9 10 -9 3 -10 5 2 6 -1 15 -18 13 -9 9 -1 1 -4 -2 -3 2 -4 -5 -2 -6 2 -12 17 -11 3zM878 110l5 -6 8 -2 5 -6 3 1 3 -7 -11 3 -7 -5 -4 2 -3 11 -10 14v3l-13 15 2 7 5 -1v5l1 -14 8 -4 1 -6h3v-7zM910 136l11 -9 -4 -3 -4 3 1 2 -7 1v4l2 -1zM888 154l3 -5 -6 1zM878 157l2 -2h-4z"
+       fill="lightgreen"
+       stroke="gray"
+       id="hokkaido"
+       transform="translate(-400, 0)" 
+       />
+</svg>
+
+<script>
+(function () {
+	
+var svg_el = document.querySelector("svg");
+var button_el = svg_el.getElementById("hokkaido");
+button_el.onclick = function () {
+	alert('でっかいどー');
+};
+
+}());
+</script>
+</body>
+</html>

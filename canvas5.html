@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title></title>
+
+</body>	<style>
+		body {
+			background-color: #fff;
+		}	
+		canvas {
+			display: block;
+			margin: 100px auto 0 auto;
+		}
+		button {
+			display: block;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+<canvas width="400" height="300"></canvas>
+<button type="button">Change</button>
+
+<script>
+(function () {
+
+var canvas_el = document.querySelector("canvas");
+var ctx = canvas_el.getContext("2d");// 画像をimg要素にロード
+
+var img_el = document.createElement("img");
+img_el.src = "assets/img/pic.jpg";
+img_el.onload = function() {
+	// Canvasに画像を貼り付ける
+	ctx.drawImage(img_el, 0, 0);
+};
+var button = document.querySelector("button");
+button.onclick = function () {
+	// ImageDataオブジェクトを取得
+	var imagedata = ctx.getImageData(0, 0, 400, 300);
+	// 新たにImageDataオブジェクトを生成
+	var new_imagedata = ctx.createImageData(400, 300);
+	// バイト数
+	var length = imagedata.data.length;
+	// ピクセルごと処理
+	for( var i=0; i<length; i+=4 ) {
+		// コンポーネントを取得
+		var r = imagedata.data[i];   // 赤コンポーネント
+		var g = imagedata.data[i+1]; // 緑コンポーネント
+		var b = imagedata.data[i+2]; // 青コンポーネント
+		var a = imagedata.data[i+3]; // アルファコンポーネント
+		// NTSC加重平均法によるグレースケール変換
+		var gray = 0.298912 * r + 0.586611 * g + 0.114478 * b;
+		gray = parseInt(gray, 10);
+		// 変換値を新たなImageDataにセット
+		new_imagedata.data[i] = gray;   // 赤コンポーネント
+		new_imagedata.data[i+1] = gray; // 緑コンポーネント
+		new_imagedata.data[i+2] = gray; // 青コンポーネント
+		new_imagedata.data[i+3] = a;    // アルファコンポーネント
+	}
+	// 新たなImageDataをCanvasにセット
+	ctx.putImageData(new_imagedata, 0, 0);
+};
+
+})();
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Interactive Web</title>
+  <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+  
+  <link rel="stylesheet" href="bower_components/reveal.js/css/theme/beige.css">
+  
+  <style type="text/css" media="screen">
+  iframe.demo {
+     width: 100%;
+     height: 500px;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans JP';
+    src: url('assets/font/NotoSansJP-Regular.otf');
+    font-weight: normal;
+  }
+
+  .reveal {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .reveal h1 {
+    text-shadow: none;
+  }
+
+  .reveal h2 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+  }
+
+  .reveal li {
+    font-size: 2em;
+    line-height: 1.2em;
+    margin-bottom: .2em;
+  }
+
+  .reveal li li {
+    font-size: .9em;
+    line-height: 1.2em;
+  }
+
+
+  </style>
+</head>
+<body>
+  <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-markdown="content.md" data-separator="^\n---$">
+      </section>
+
+    <div>
+  </div>
+
+  <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+  <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+
+  <script>
+   Reveal.initialize({
+    transition: 'fade',
+    backgroundTransition: 'slide',
+    history: true,
+    width: 1200,
+    height: 800,
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        // { src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+  </script>
+</body>
+</html>
